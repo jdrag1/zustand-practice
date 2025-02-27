@@ -1,4 +1,3 @@
-import React from 'react';
 import Login from './components/Login';
 import Profile from './components/Profile';
 import useAuthStore from '../src/store.ts/authStore'
