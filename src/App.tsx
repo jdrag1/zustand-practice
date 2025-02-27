@@ -1,12 +1,14 @@
-import ProductList from './components/ProductList';
-import Cart from './components/Cart';
+import React from 'react';
+import Login from './components/Login';
+import Profile from './components/Profile';
+import useAuthStore from '../src/store.ts/authStore'
 
 function App() {
+  const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+
   return (
     <div className="App">
-      <h1>E-commerce with Zustand</h1>
-      <ProductList />
-      <Cart />
+      {isLoggedIn ? <Profile /> : <Login />}
     </div>
   );
 }
